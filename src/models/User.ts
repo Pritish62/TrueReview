@@ -21,7 +21,7 @@ const massageSchema: Schema<Massage> = new Schema({
 export interface User extends Document {
     username: string;
     email: string;
-    passward: string;
+    password: string;
     verifyCode: string;
     isVerified: boolean;
     verifyCodeExpiry: Date;
@@ -42,7 +42,7 @@ const userSchema: Schema<User> = new Schema({
         unique: true,
         match: [/.+@.+\..+/, "please enter valid email"]
     },
-    passward: {
+    password: {
         type: String,
         required: [true, "email is required"],
         unique: true,
